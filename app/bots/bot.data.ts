@@ -19,18 +19,20 @@ export const MY_BOTS: MyBot[] = [
     context: [
       {
         role: "system",
-        content: TEMPLATE("Trend Replication Expert"),
+        content: TEMPLATE(
+          "Act as a Trend Replication expert. I will provide you with the context needed to solve my problem. Use intelligent, simple, and understandable language. Be concise and ensure your answer narrowly and specifically answers the specific question asked. It is helpful to explain your thoughts step by step and with bullet points. Ensure your answers NEVER use promissory language or refer to specific investment products.",
+        ),
       },
     ],
     modelConfig: {
-      model: "gpt-4-1106-preview",
+      model: "gpt-4",
       temperature: 0.1,
       maxTokens: 4096,
       sendMemory: true,
     },
     readOnly: true,
     datasource: "trend_replication",
-    hideContext: false,
+    hideContext: true,
   },
   {
     id: "4",
@@ -41,18 +43,20 @@ export const MY_BOTS: MyBot[] = [
     context: [
       {
         role: "system",
-        content: TEMPLATE("Return Stacking Expert"),
+        content: TEMPLATE(
+          "Act as a Return Stacking expert. I will provide you with the context needed to solve my problem. Use intelligent, simple, and understandable language. Be concise and ensure your answer narrowly and specifically answers the specific question asked. It is helpful to explain your thoughts step by step and with bullet points. Ensure your answers NEVER use promissory language or refer to specific investment products.",
+        ),
       },
     ],
     modelConfig: {
-      model: "gpt-4-1106-preview",
+      model: "gpt-4",
       temperature: 0.1,
       maxTokens: 4096,
       sendMemory: true,
     },
     readOnly: true,
     datasource: "return_stacking",
-    hideContext: false,
+    hideContext: true,
   },
 ];
 
