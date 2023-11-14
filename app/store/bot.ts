@@ -3,7 +3,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { LLMConfig } from "../client/platforms/llm";
 import { ChatSession, ChatMessage, createEmptySession } from "./session";
-import { DEMO_BOTS, createDemoBots, createEmptyBot } from "@/app/bots/bot.data";
+import { MY_BOTS, createMyBots, createEmptyBot } from "@/app/bots/bot.data";
 
 export type Share = {
   id: string;
@@ -51,13 +51,13 @@ type BotStore = BotState & {
   clearAllData: () => void;
 };
 
-const demoBots = createDemoBots();
+const myBots = createMyBots();
 
 export const useBotStore = create<BotStore>()(
   persist(
     (set, get) => ({
-      bots: demoBots,
-      currentBotId: Object.values(demoBots)[0].id,
+      bots: myBots,
+      currentBotId: Object.values(myBots)[0].id,
 
       currentBot() {
         return get().bots[get().currentBotId];
@@ -145,19 +145,19 @@ export const useBotStore = create<BotStore>()(
       migrate: (persistedState, version) => {
         const state = persistedState as BotState;
         if (version < 1) {
-          DEMO_BOTS.forEach((demoBot) => {
-            // check if there is a bot with the same name as the demo bot
+          MY_BOTS.forEach((myBot) => {
+            // check if there is a bot with the same name as the my bot
             const bot = Object.values(state.bots).find(
-              (b) => b.name === demoBot.name,
+              (b) => b.name === myBot.name,
             );
             if (bot) {
-              // if so, update the id of the bot to the demo bot id
+              // if so, update the id of the bot to the my bot id
               delete state.bots[bot.id];
-              bot.id = demoBot.id;
+              bot.id = myBot.id;
               state.bots[bot.id] = bot;
             } else {
-              // if not, store the new demo bot
-              const bot: Bot = JSON.parse(JSON.stringify(demoBot));
+              // if not, store the new my bot
+              const bot: Bot = JSON.parse(JSON.stringify(myBot));
               bot.session = createEmptySession();
               state.bots[bot.id] = bot;
             }
