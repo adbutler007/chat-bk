@@ -137,8 +137,9 @@ const en = {
   },
 
   Welcome: {
-    Title: "Chat LlamaIndex",
-    SubTitle: "Create chat bots that know your data",
+    Title: "Return Stacking Chatbot",
+    SubTitle:
+      "Get answers to questions about Return Stacking and trend replications strategies.",
     Quote:
       "“This tool has saved me countless hours of work and helped me apply AI features to my work faster than ever before.”",
     LoginLinkedinTitle: "Login with LinkedIn",
