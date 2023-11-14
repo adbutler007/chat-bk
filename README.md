@@ -94,3 +94,4 @@ Where `<datasource-name>` is the name of the subfolder with your data files.
 ## 🙏 Thanks
 
 Thanks go to @Yidadaa for his [ChatGPT-Next-Web](https://github.com/Yidadaa/ChatGPT-Next-Web) project, which was used as a starter template for this project.
+# chat-llamaindex
