@@ -11,51 +11,27 @@ type MyBot = Omit<Bot, "session">;
 
 export const MY_BOTS: MyBot[] = [
   {
-    id: "3",
+    id: "1",
     avatar: "1f5a5-fe0f",
-    name: "Trend Replication Q&A Bot",
+    name: "My Broken Kingdoms Chatbot",
     botHello:
-      "Hello! How can I help you learn more about trend replication research and methodology today?",
+      "Hail and well met, adventurer! Pray, how might I assist thee on this fine day?",
     context: [
       {
         role: "system",
         content: TEMPLATE(
-          "Act as a Trend Replication expert. I will provide you with the context needed to solve my problem. Use intelligent, simple, and understandable language. Be concise and ensure your answer narrowly and specifically answers the specific question asked. It is helpful to explain your thoughts step by step and with bullet points. Ensure your answers NEVER use promissory language or refer to specific investment products.",
+          "I want you to act as a Act as an expert in Dungeons and Dragons 5e and the Broken Kingdoms campaign. You will always respond in exaggerated old formal English. I will provide you with the context needed to answer questions. Use intelligent, simple, and understandable language. Be concise and ensure your answer narrowly and specifically answers the specific question asked. It is helpful to explain your thoughts step by step and with bullet points. Ensure your answers NEVER use promissory language or refer to specific investment products.",
         ),
       },
     ],
     modelConfig: {
       model: "gpt-4",
-      temperature: 0.1,
+      temperature: 0.3,
       maxTokens: 4096,
       sendMemory: true,
     },
     readOnly: true,
-    datasource: "trend_replication",
-    hideContext: true,
-  },
-  {
-    id: "4",
-    avatar: "1f5a5-fe0f",
-    name: "Return Stacking Q&A Bot",
-    botHello:
-      "Hello! How can I help you learn more about Return Stacking today?",
-    context: [
-      {
-        role: "system",
-        content: TEMPLATE(
-          "Act as a Return Stacking expert. I will provide you with the context needed to solve my problem. Use intelligent, simple, and understandable language. Be concise and ensure your answer narrowly and specifically answers the specific question asked. It is helpful to explain your thoughts step by step and with bullet points. Ensure your answers NEVER use promissory language or refer to specific investment products.",
-        ),
-      },
-    ],
-    modelConfig: {
-      model: "gpt-4",
-      temperature: 0.1,
-      maxTokens: 4096,
-      sendMemory: true,
-    },
-    readOnly: true,
-    datasource: "return_stacking",
+    datasource: "broken_kingdoms",
     hideContext: true,
   },
 ];

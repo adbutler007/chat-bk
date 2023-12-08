@@ -137,9 +137,8 @@ const en = {
   },
 
   Welcome: {
-    Title: "Return Stacking Chatbot",
-    SubTitle:
-      "Get answers to questions about Return Stacking and trend replication strategies.",
+    Title: "Broken Kingdoms Chatbot",
+    SubTitle: "What task this humble servant?",
     Quote:
       "“This tool has saved me countless hours of work and helped me apply AI features to my work faster than ever before.”",
     LoginLinkedinTitle: "Login with LinkedIn",
